@@ -1,0 +1,30 @@
+/* Full screen center */
+.header-wrapper {
+  height: 100vh;              /* full screen height */
+  display: flex;
+  justify-content: center;    /* horizontal center */
+  align-items: center;        /* vertical center */
+  gap: 30px;
+  background: #f5f7fb;
+}
+
+/* Card design */
+.header-card {
+  width: 240px;
+  height: 120px;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-card:hover {
+  transform: translateY(-8px);
+}

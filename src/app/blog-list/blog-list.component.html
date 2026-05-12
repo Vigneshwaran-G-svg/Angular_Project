@@ -1,0 +1,81 @@
+<div class="min-h-screen bg-gray-100 p-6">
+
+  <!-- HEADER -->
+  <div class="bg-white shadow-lg rounded-2xl p-6 max-w-8xl mx-auto mb-8">
+
+    <div class="flex flex-col lg:flex-row lg:items-center">
+
+      <!-- TITLE -->
+      <div>
+        <h1 class="text-3xl font-bold text-gray-800">
+          Blog Dashboard
+        </h1>
+
+        <p class="text-gray-500 mt-1">
+          Read latest blogs and articles
+        </p>
+      </div>
+
+      <!-- BACK BUTTON -->
+      <div class="mt-4 lg:mt-0 lg:ml-auto">
+        <button
+          (click)="goHome()"
+          class="bg-black -600 hover:bg-black -700 text-white px-5 py-2 rounded-xl shadow"
+        >
+          ← Back
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+
+    <!-- BLOG CARD -->
+    <div
+      *ngFor="let b of blogs"
+      class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden"
+    >
+
+      <!-- IMAGE -->
+      <div class="overflow-hidden">
+        <img
+          [src]="b.image"
+          class="h-56 w-full object-cover hover:scale-105 transition duration-300"
+        />
+      </div>
+
+      <!-- CONTENT -->
+      <div class="p-5">
+
+        <!-- AUTHOR -->
+        <p class="text-sm text-blue-600 font-medium mb-2">
+          By {{ b.author }}
+        </p>
+
+        <!-- TITLE -->
+        <h2 class="text-xl font-bold text-gray-800 line-clamp-2">
+          {{ b.title }}
+        </h2>
+
+        <!-- DESCRIPTION -->
+        <p class="text-gray-500 text-sm mt-3 line-clamp-3">
+          Discover amazing insights and useful information from this blog article.
+        </p>
+
+        <!-- BUTTON -->
+        <a
+          [routerLink]="['/blogs', b.id]"
+          class="inline-block mt-5 bg-gray-800 hover:bg-black text-white px-5 py-2 rounded-xl transition"
+        >
+          Read More →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

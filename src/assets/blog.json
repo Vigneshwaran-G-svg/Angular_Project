@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Angular 17 New Features",
+    "author": "John",
+    "image": "https://picsum.photos/600/300?1",
+    "content": "Angular 17 introduces standalone components, better performance, and simplified APIs..."
+  },
+  {
+    "id": 2,
+    "title": "Why Tailwind CSS is Powerful",
+    "author": "David",
+    "image": "https://picsum.photos/600/300?2",
+    "content": "Tailwind CSS allows rapid UI building with utility-first classes..."
+  },
+  {
+    "id": 3,
+    "title": "Understanding TypeScript",
+    "author": "Smith",
+    "image": "https://picsum.photos/600/300?3",
+    "content": "TypeScript adds strong typing to JavaScript and improves developer productivity..."
+  },
+  {
+  "id": 4,
+  "title": "Getting Started with RxJS in Angular",
+  "author": "Michael",
+  "image": "https://picsum.photos/600/300?4",
+  "content": "RxJS is a powerful library for handling asynchronous data streams in Angular applications. It helps manage events, HTTP responses, and user inputs efficiently using Observables and operators..."
+},
+{
+  "id": 5,
+  "title": "Building Responsive Layouts with CSS Grid",
+  "author": "Emma",
+  "image": "https://picsum.photos/600/300?5",
+  "content": "CSS Grid is a two-dimensional layout system that makes it easier to design responsive web pages. It allows developers to create flexible and structured layouts with minimal code..."
+},
+{
+  "id": 6,
+  "title": "Best Practices for Angular Project Structure",
+  "author": "Chris",
+  "image": "https://picsum.photos/600/300?6",
+  "content": "Organizing an Angular project properly improves maintainability and scalability. Following a modular folder structure, reusable components, and services ensures clean and efficient code..."
+}
+]
