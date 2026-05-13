@@ -43,105 +43,133 @@
   </div>
 
   <!-- WEATHER CARD -->
-  <div
-    *ngIf="current"
-    class="bg-white rounded-2xl shadow-lg p-6 max-w-8xl w-full mx-auto"
-  >
+ <div
+  *ngIf="current"
+  class="relative overflow-hidden rounded-3xl shadow-2xl p-8 max-w-8xl w-full mx-auto text-white bg-cover bg-center"
+  style="background-image: url('../../assets/download.jpg');"
+>
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- CONTENT -->
+  <div class="relative z-10">
 
     <!-- TOP SECTION -->
-    <div class="text-center mb-6">
-      <h2 class="text-2xl font-bold text-gray-800">
+    <div class="text-center mb-8">
+
+      <h2 class="text-3xl font-bold">
         {{ current.name }}
       </h2>
 
-      <p class="text-6xl font-bold text-blue-600 mt-3">
+      <p class="text-7xl font-bold mt-4">
         {{ current.main.temp }}°C
       </p>
 
-      <p class="capitalize text-xl text-gray-600 mt-2">
+      <p class="capitalize text-2xl mt-3 text-gray-200">
         {{ current.weather[0].description }}
       </p>
 
-     <!-- WEATHER INFO -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-
-  <!-- HUMIDITY -->
-  <div class="bg-blue-50 rounded-xl p-4 shadow-sm text-center">
-    <p class="text-gray-500 text-sm">Humidity</p>
-
-    <p class="text-3xl font-bold text-blue-600 mt-2">
-      {{ current.main.humidity }}%
-    </p>
-
-    <!-- PERCENT BAR -->
-    <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-      <div
-        class="bg-blue-500 h-2 rounded-full"
-        [style.width.%]="current.main.humidity"
-      ></div>
     </div>
-  </div>
 
-  <!-- WIND -->
-  <div class="bg-green-50 rounded-xl p-4 shadow-sm text-center">
-    <p class="text-gray-500 text-sm">Wind Speed</p>
+    <!-- WEATHER INFO -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
 
-    <p class="text-3xl font-bold text-green-600 mt-2">
-      {{ current.wind.speed }}
-    </p>
+      <!-- HUMIDITY -->
+      <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
-    <p class="text-sm text-gray-500 mt-1">
-      km/h
-    </p>
-  </div>
+        <p class="text-sm text-gray-200">
+          Humidity
+        </p>
 
-  <!-- FEELS LIKE -->
-  <div class="bg-orange-50 rounded-xl p-4 shadow-sm text-center">
-    <p class="text-gray-500 text-sm">Feels Like</p>
+        <p class="text-4xl font-bold mt-3">
+          {{ current.main.humidity }}%
+        </p>
 
-    <p class="text-3xl font-bold text-orange-500 mt-2">
-      {{ current.main.feels_like }}°C
-    </p>
-  </div>
+        <div class="w-full bg-white/20 rounded-full h-2 mt-4">
+          <div
+            class="bg-blue-400 h-2 rounded-full"
+            [style.width.%]="current.main.humidity"
+          ></div>
+        </div>
 
-  <!-- PRESSURE -->
-  <div class="bg-purple-50 rounded-xl p-4 shadow-sm text-center">
-    <p class="text-gray-500 text-sm">Pressure</p>
+      </div>
 
-    <p class="text-3xl font-bold text-purple-600 mt-2">
-      {{ current.main.pressure }}
-    </p>
+      <!-- WIND -->
+      <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
-    <p class="text-sm text-gray-500 mt-1">
-      hPa
-    </p>
-  </div>
+        <p class="text-sm text-gray-200">
+          Wind Speed
+        </p>
 
-</div>
+        <p class="text-4xl font-bold mt-3">
+          {{ current.wind.speed }}
+        </p>
+
+        <p class="text-sm mt-2 text-gray-300">
+          km/h
+        </p>
+
+      </div>
+
+      <!-- FEELS LIKE -->
+      <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
+
+        <p class="text-sm text-gray-200">
+          Feels Like
+        </p>
+
+        <p class="text-4xl font-bold mt-3">
+          {{ current.main.feels_like }}°C
+        </p>
+
+      </div>
+
+      <!-- PRESSURE -->
+      <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
+
+        <p class="text-sm text-gray-200">
+          Pressure
+        </p>
+
+        <p class="text-4xl font-bold mt-3">
+          {{ current.main.pressure }}
+        </p>
+
+        <p class="text-sm mt-2 text-gray-300">
+          hPa
+        </p>
+
+      </div>
+
     </div>
 
     <!-- FORECAST -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
 
       <div
         *ngFor="let f of forecast"
-        class="bg-gray-100 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition"
+        class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-5 text-center"
       >
-        <p class="font-semibold text-gray-700">
+
+        <p class="font-semibold text-gray-200">
           {{ f.dt_txt | date:'shortTime' }}
         </p>
 
-        <p class="text-2xl font-bold text-blue-500 mt-3">
+        <p class="text-3xl font-bold mt-3">
           {{ f.main.temp }}°C
         </p>
 
-        <p class="capitalize text-gray-600 mt-2">
+        <p class="capitalize text-gray-300 mt-2">
           {{ f.weather[0].description }}
         </p>
+
       </div>
 
     </div>
 
   </div>
+
+</div>
 
 </div>
