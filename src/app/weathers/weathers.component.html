@@ -1,28 +1,26 @@
 <div class="min-h-screen bg-gray-100 p-6">
 
-  <!-- HEADER -->
+
 <div class="bg-white shadow-lg rounded-2xl p-6 max-w-8xl w-full mx-auto mb-6">
 
     <div class="flex flex-col lg:flex-row lg:items-center">
 
-      <!-- LEFT SIDE -->
       <div>
         <h1 class="text-3xl font-bold text-gray-800">
           Weather Dashboard
         </h1>
       </div>
 
-      <!-- RIGHT SIDE -->
       <div class="flex items-center gap-3 mt-4 lg:mt-0 lg:ml-auto">
 
-        <!-- SEARCH -->
+
         <input
           [(ngModel)]="city"
           placeholder="Enter city name"
           class="border border-gray-300 px-4 py-2 rounded-xl w-64 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
-        <!-- SEARCH BUTTON -->
+       
         <button
           (click)="search()"
           class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl shadow"
@@ -30,7 +28,6 @@
           Search
         </button>
 
-        <!-- BACK BUTTON -->
         <button
           (click)="goHome()"
           class="bg-gray-700 hover:bg-gray-800 text-white px-5 py-2 rounded-xl shadow"
@@ -42,20 +39,18 @@
     </div>
   </div>
 
-  <!-- WEATHER CARD -->
+
  <div
   *ngIf="current"
   class="relative overflow-hidden rounded-3xl shadow-2xl p-8 max-w-8xl w-full mx-auto text-white bg-cover bg-center"
   style="background-image: url('../../assets/download.jpg');"
 >
 
-  <!-- DARK OVERLAY -->
+ 
   <div class="absolute inset-0 bg-black/40"></div>
 
-  <!-- CONTENT -->
   <div class="relative z-10">
 
-    <!-- TOP SECTION -->
     <div class="text-center mb-8">
 
       <h2 class="text-3xl font-bold">
@@ -72,10 +67,9 @@
 
     </div>
 
-    <!-- WEATHER INFO -->
+
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-8">
 
-      <!-- HUMIDITY -->
       <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
         <p class="text-sm text-gray-200">
@@ -95,7 +89,7 @@
 
       </div>
 
-      <!-- WIND -->
+      
       <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
         <p class="text-sm text-gray-200">
@@ -112,7 +106,7 @@
 
       </div>
 
-      <!-- FEELS LIKE -->
+
       <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
         <p class="text-sm text-gray-200">
@@ -125,7 +119,7 @@
 
       </div>
 
-      <!-- PRESSURE -->
+
       <div class="backdrop-blur-md bg-white/10 rounded-2xl p-5 text-center border border-white/20">
 
         <p class="text-sm text-gray-200">
@@ -144,7 +138,6 @@
 
     </div>
 
-    <!-- FORECAST -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
 
       <div

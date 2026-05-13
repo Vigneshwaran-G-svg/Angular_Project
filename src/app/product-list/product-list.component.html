@@ -1,11 +1,9 @@
 <div class="min-h-screen bg-gray-100 p-6">
 
-  <!-- HEADER -->
   <div class="bg-white shadow-lg rounded-2xl p-6 max-w-8xl mx-auto mb-6">
 
     <div class="flex flex-col lg:flex-row lg:items-center">
 
-      <!-- TITLE -->
       <div>
         <h3 class="text-2xl font-bold text-gray-800">
           Product List
@@ -15,10 +13,10 @@
         </p>
       </div>
 
-      <!-- RIGHT SIDE -->
+
       <div class="flex items-center gap-3 mt-4 lg:mt-0 lg:ml-auto">
 
-        <!-- CATEGORY -->
+
         <select
           class="border border-gray-300 px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
           [(ngModel)]="selectedCategory"
@@ -30,7 +28,7 @@
           </option>
         </select>
 
-        <!-- SORT -->
+     
         <select
           class="border border-gray-300 px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
           [(ngModel)]="sortOrder"
@@ -41,7 +39,7 @@
           <option value="high">High → Low</option>
         </select>
 
-        <!-- BACK BUTTON -->
+      
         <button
           (click)="goHome()"
           class="bg-black -600 hover:bg-black -700 text-white px-5 py-2 rounded-xl shadow"
@@ -53,7 +51,6 @@
     </div>
   </div>
 
-  <!-- PRODUCT GRID -->
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-8xl mx-auto">
 
     <div
@@ -61,7 +58,7 @@
       class="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-5"
     >
 
-      <!-- IMAGE -->
+  
       <div class="bg-gray-100 rounded-xl p-4 h-52 flex items-center justify-center">
         <img
           [src]="p.image"
@@ -69,7 +66,7 @@
         />
       </div>
 
-      <!-- CONTENT -->
+
       <div class="mt-4">
 
         <h3 class="font-semibold text-gray-800 line-clamp-2 h-12">
@@ -85,10 +82,9 @@
           <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full">
             {{ p.category }}
           </span>
- <!-- STAR RATING -->
+
 <div class="flex items-center gap-1">
 
-  <!-- FILLED STARS -->
   <ng-container *ngFor="let star of [1,2,3,4,5]">
 
     <span
@@ -101,7 +97,7 @@
 
   </ng-container>
 
-  <!-- RATING NUMBER -->
+
   <span class="ml-2 text-sm font-semibold text-gray-700">
     {{ p.rating.rate }}
   </span>
@@ -109,12 +105,7 @@
 </div>
         </div>
 
-        <!-- BUTTON -->
-        <!-- <button
-          class="w-full mt-5 bg-gray-800 hover:bg-black text-white py-2 rounded-xl transition"
-        >
-          View Product
-        </button> -->
+      
 
       </div>
       
